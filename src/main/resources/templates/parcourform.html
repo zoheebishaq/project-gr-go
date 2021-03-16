@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: html_head"/>
+
+
+<body>
+<header th:replace="fragments :: html_navbar"/>
+
+<!--<ul th:each="golf: ${golfs}">-->
+<!--    <li>Nom golf: <span th:text="${golf.nom}">-->
+<!--        </span>-->
+
+
+<!--    </li>-->
+<!--</ul>-->
+<form
+        method="post"
+        action="#"
+        enctype="multipart/form-data"
+        th:action="@{/parcour}"
+        th:object="${parcours}">
+
+    <input th:field="*{id}" type="hidden">
+
+
+    Nom : <input th:field="*{golfId}" type="text"><br/>
+
+
+    <input type="submit" value="Valider"><br/>
+
+</form>
+
+
+
+
+<footer th:replace="fragments :: html_footer"/>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: html_head"/>
+
+
+<body>
+<header th:replace="fragments :: html_navbar"/>
+<div>
+<ul th:each="g: ${golf}">
+    <li>Nom golf: <span th:text="${g.nom}"></span> <a href="#" th:href="@{'/golf/'+${g.id}}">Modifier</a></li>
+    <a href="#" th:href="@{'/golf/delete/'+${g.id}}">Supprimer</a>
+</ul>
+
+<a href="#" th:href="@{'/golf/add'}">Ajouter un golf</a><br/>
+</div>
+<footer th:replace="fragments :: html_footer"/>
+</body>
+</html>

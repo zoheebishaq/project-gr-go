@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: html_head"/>
+
+
+<body>
+<header th:replace="fragments :: html_navbar"/>
+
+<ul th:each="t: ${trou}">
+    <li>Numero de trou: <span th:text="${t.numTrou}">
+        </span>
+        <br>
+        Nombre de par: <span th:text="${t.par}">
+        </span>
+        <br>
+        Nom du trou: <span th:text="${t.nom}">
+        </span>
+    </li>
+</ul>
+<footer th:replace="fragments :: html_footer"/>
+</body>
+</html>

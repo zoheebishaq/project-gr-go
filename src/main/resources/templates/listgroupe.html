@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: html_head"/>
+
+
+<body>
+<header th:replace="fragments :: html_navbar"/>
+<div>
+    <ul th:each="gr: ${groupes}">
+        <li>Nom golf: <span th:text="${gr.nom}"></span> <a href="#" th:href="@{'/admin/groupe/'+${gr.id}}">Modifier</a></li>
+        <a href="#" th:href="@{'/admin/groupe/delete/'+${gr.id}}">Supprimer</a>
+    </ul>
+
+    <a href="#" th:href="@{'/admin/groupe/add'}">Ajouter un role</a><br/>
+</div>
+<footer th:replace="fragments :: html_footer"/>
+</body>
+</html>

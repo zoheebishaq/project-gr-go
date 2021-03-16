@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: html_head"/>
+
+
+<body>
+<header th:replace="fragments :: html_navbar"/>
+
+<div>
+    <ul th:each="p: ${parcour}">
+        <li>Nom parcour: <span th:text="${p.nom}"></span> <a href="#" th:href="@{'/parcour/'+${p.id}}">Modifier</a></li>
+        <a href="#" th:href="@{'/golf/delete/'+${p.id}}">Supprimer</a>
+    </ul>
+
+    <a href="#" th:href="@{'/parcour/add'}">Ajouter un parcour</a><br/>
+</div>
+
+<footer th:replace="fragments :: html_footer"/>
+</body>
+</html>
